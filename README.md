@@ -1,30 +1,27 @@
 # Credit Card Fraud Detection Project 
 ![](https://www.datascienceportfol.io/static/profile_pics/pr14_A38ED02CE0D67F0A3BF5.jpg)
 
-This fraud detection project trained a classifier to identify fraudulent transactions within an imbalanced dataset. Using an autoencoder for dimensionality reduction, essential transaction features were extracted to improve detection accuracy. A logistic regression model achieved high overall accuracy (95%) and strong performance in identifying non-fraudulent transactions. However, the model’s recall for fraudulent transactions was lower, indicating a need for further tuning to enhance fraud sensitivity. In summary, the project demonstrates effective fraud detection with room for improvement in capturing all instances of fraud.
-
 ### Overview of Model Training:
-The objective of model training in this fraud detection project was to develop a reliable classifier to distinguish between normal (non-fraudulent) and fraudulent transactions. The dataset, which contained significantly more non-fraudulent transactions than fraudulent ones, required careful handling to ensure balanced model performance. Here’s a breakdown of the key steps in the training process:
+In this model training project, the goal was to classify transactions as either normal or fraudulent with high accuracy. To achieve this, we utilized a combination of data preprocessing, feature extraction through an autoencoder, and classification via logistic regression. The model’s performance was evaluated on precision, recall, F1-score, and accuracy.
 
-- Data Preprocessing: The Amount feature was normalized to standardize transaction values, preventing large values from skewing the model’s learning process.
-The dataset was split into training and test sets, ensuring a mix of both classes for evaluation.
+1. **Data Preprocessing:**
+- Standardized the Amount feature to match the range and scale of other features, creating consistency.
+- Used an autoencoder to reduce dimensionality and emphasize essential patterns, especially for the smaller fraud class.
 
-- Dimensionality Reduction: An autoencoder was employed to capture the most informative features of the transaction data, reducing dimensionality while retaining essential patterns.
-The autoencoder’s hidden representations were then used to create compressed features, enabling the model to focus on core transaction characteristics relevant to fraud detection.
+2. **Classification Model:**
+- Trained a logistic regression model on extracted features to classify transactions, effectively capturing differences between normal and fraudulent behaviors.
+- Evaluated the model to ensure balanced performance, focusing on both fraud detection and avoiding false positives in normal transactions.
 
-- Classification Model: A logistic regression classifier was trained using the hidden representations from the autoencoder. This approach helped maintain a balance between computational efficiency and prediction accuracy.
-Given the imbalanced dataset, precision, recall, and F1-score were critical metrics to assess the model’s effectiveness in predicting fraudulent transactions accurately.
+### Conclusion: 
+The final model achieved an overall accuracy of 98.5%, demonstrating a high capability in classifying transactions correctly:
 
-- Performance Evaluation: The model was evaluated based on classification metrics including precision, recall, F1-score, and accuracy. While the overall accuracy reached 95%, recall for fraudulent transactions indicated that further tuning could improve detection rates.
+- Normal Transactions (Class 0): Precision and recall were both close to perfect at 0.98 and 1.0, respectively, highlighting the model's accuracy in identifying non-fraudulent cases.
 
-### Conclusion of Model Training:
-The model training process successfully yielded a classifier with high accuracy and strong predictive capabilities for non-fraudulent transactions. However, the model’s recall score for fraudulent transactions suggests a potential under-detection of fraud, indicating room for improvement.
+- Fraudulent Transactions (Class 1): Although precision was excellent (1.0), the recall was 0.59, meaning that while the model is very accurate when it labels a transaction as fraud, it missed some true fraud cases.
 
-### Key Takeaways:
+### Summary: 
 
-- Strengths: The model performs reliably for non-fraudulent transactions, achieving high precision and recall in this class.
+- Strengths: The model is highly effective at identifying normal transactions with minimal false positives, which is crucial for maintaining smooth transaction flow in real-world applications.
+- Areas for Improvement: To increase recall for fraudulent cases, additional strategies like advanced sampling techniques or further tuning of the autoencoder and classifier may be beneficial.
 
-- Areas for Improvement: The reduced recall for fraud cases suggests the model could be further optimized for greater sensitivity to fraud patterns, potentially by addressing the class imbalance more intensively.
-
-In summary, the model shows strong performance but could benefit from additional tuning to ensure it captures a higher number of fraudulent transactions accurately.
-
+The model effectively identifies fraudulent transactions, achieving an optimal balance between accuracy and performance, though it could be fine-tuned to further enhance fraud detection sensitivity.
