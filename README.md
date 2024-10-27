@@ -24,10 +24,7 @@ The model training process successfully yielded a classifier with high accuracy 
 
 - Strengths: The model performs reliably for non-fraudulent transactions, achieving high precision and recall in this class.
 
-- Challenges: The lower recall for fraudulent transactions highlights the need for enhanced model sensitivity to fraud cases, which could be addressed with additional techniques for imbalanced data handling.
+- Areas for Improvement: The reduced recall for fraud cases suggests the model could be further optimized for greater sensitivity to fraud patterns, potentially by addressing the class imbalance more intensively.
 
-In conclusion, the training process established a solid foundation for fraud detection, but ongoing refinement is recommended to optimize fraud detection sensitivity and reduce false negatives.
-
-
-
+In summary, the model shows strong performance but could benefit from additional tuning to ensure it captures a higher number of fraudulent transactions accurately.
 
